@@ -13,7 +13,7 @@ export const RoomDetail = ({ selectedRoom }) => {
             <img src={selectedRoom.img} alt={selectedRoom.alt} />
             <p>{selectedRoom.info}</p>
           </div>
-          <Form />
+          <Form selectedRoom="selectedRoom" />
         </div>
       </div>
     </section>

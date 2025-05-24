@@ -1,35 +1,66 @@
 import { useState } from 'react';
 
-export const Form = () => {
+export const Form = ({ selectedRoom }) => {
   const [dateFrom, setDateFrom] = useState();
 
   return (
     <form>
       <div className="form-fields">
-        <label htmlFor="field1" className="field-label">
-          Field 1:
+        <label htmlFor="date-from" className="field-label">
+          Od:
         </label>
-        <input id="field1" className="field-input" type="text" />
+        <input id="date-from" className="field-input" type="date" />
 
-        <label htmlFor="field2" className="field-label">
-          Field 2:
+        <label htmlFor="date-till" className="field-label">
+          Do:
         </label>
-        <input id="field2" className="field-input" type="text" />
+        <input id="date-till" className="field-input" type="date" />
 
-        <label htmlFor="select" className="field-label">
-          Select:
+        <label htmlFor="people" className="field-label">
+          Počet osob:
         </label>
-        <select id="select" className="field-input">
-          <option>Option 1</option>
-          <option>Option 2</option>
-          <option>Option 3</option>
-          <option>Option 4</option>
+        <input
+          type="number"
+          min="0"
+          max="4"
+          id="people"
+          className="field-input"
+        />
+
+        <label htmlFor="food" className="field-label">
+          Stravování:
+        </label>
+        <select id="food" className="field-input">
+          <option>Žádné</option>
+          <option>Snídaně</option>
+          <option>Polopenze</option>
+          <option>Plná penze</option>
         </select>
 
-        <label htmlFor="check1" className="field-label">
-          Checkbox 1:
+        <label htmlFor="animal" className="field-label">
+          Domácí mazlíček:
         </label>
-        <input id="check1" className="field-input" type="checkbox" />
+        <input id="animal" className="field-input" type="checkbox" />
+
+        <label htmlFor="kids" className="field-label">
+          Přistýlka pro dítě:
+        </label>
+        <input id="kids" className="field-input" type="checkbox" />
+
+        <label htmlFor="disability" className="field-label">
+          Bezbariérový přístup:
+        </label>
+        <input id="disability" className="field-input" type="checkbox" />
+
+        <label htmlFor="email" className="field-label">
+          Email:
+        </label>
+        <input id="email" className="field-input" type="email" />
+
+        <label htmlFor="tel" className="field-label">
+          Telefon:
+        </label>
+        <input id="tel" className="field-input" type="tel" />
       </div>
       <button className="wide">Submit</button>
     </form>
