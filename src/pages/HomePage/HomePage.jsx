@@ -1,7 +1,7 @@
-import { Header } from '../Header/Header';
-import { ListRoom } from '../ListRoom/ListRoom';
-import { RoomDetail } from '../RoomDetail/RoomDetail';
-import { Footer } from '../Footer/Footer';
+import { Header } from '../../components/Header/Header';
+import { ListRoom } from '../../components/ListRoom/ListRoom';
+import { RoomDetail } from '../../components/RoomDetail/RoomDetail';
+import { Footer } from '../../components/Footer/Footer';
 
 export const HomePage = () => {
   return (
