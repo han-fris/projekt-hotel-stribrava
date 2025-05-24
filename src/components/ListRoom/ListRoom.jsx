@@ -1,18 +1,22 @@
 import { Room } from '../Room/Room';
 
-export const ListRoom = () => {
+export const ListRoom = ({ rooms }) => {
   return (
     <>
       <section className="dark">
         <div className="container">
-          <h2>Heading</h2>
-          <p>Quas odio quidem, enim nihil unde quia temporibus vitae in ab.</p>
+          <h2>Naše pokoje</h2>
+          <p>Vyberte si, který z našich pokojů je pro vás ten pravý.</p>
           <div className="cards-row">
-            <Room />
-            <Room />
-            <Room />
-            <Room />
-            <Room />
+            {rooms.map((room) => (
+              <Room
+                key={room.id}
+                picture={room.img}
+                name={room.name}
+                price={room.price}
+                alt={room.alt}
+              />
+            ))}
           </div>
         </div>
       </section>

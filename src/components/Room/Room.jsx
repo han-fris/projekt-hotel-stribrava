@@ -1,10 +1,10 @@
-export const Room = () => {
+export const Room = ({ picture, name, price, alt }) => {
   return (
     <>
       <div className="card">
-        <img className="card__image" src="img/image1.svg" />
-        <div className="card__title">Card 1</div>
-        <div className="card__body">Sunt natus</div>
+        <img className="card__image" src={picture} alt={alt} />
+        <div className="card__title">{name}</div>
+        <div className="card__body">{price}kč na osobu</div>
       </div>
     </>
   );
