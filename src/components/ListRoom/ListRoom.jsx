@@ -1,6 +1,6 @@
 import { Room } from '../Room/Room';
 
-export const ListRoom = ({ rooms }) => {
+export const ListRoom = ({ rooms, onSelectRoom }) => {
   return (
     <>
       <section className="dark">
@@ -15,6 +15,7 @@ export const ListRoom = ({ rooms }) => {
                 name={room.name}
                 price={room.price}
                 alt={room.alt}
+                onClick={() => onSelectRoom(room.id)}
               />
             ))}
           </div>
