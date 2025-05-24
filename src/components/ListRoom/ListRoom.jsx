@@ -8,7 +8,7 @@ export const ListRoom = ({ rooms }) => {
           <h2>Naše pokoje</h2>
           <p>Vyberte si, který z našich pokojů je pro vás ten pravý.</p>
           <div className="cards-row">
-            {rooms.map((room) => (
+            {rooms?.map((room) => (
               <Room
                 key={room.id}
                 picture={room.img}

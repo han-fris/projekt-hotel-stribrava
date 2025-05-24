@@ -23,7 +23,7 @@ export const HomePage = () => {
   return (
     <>
       <Header />
-      <ListRoom />
+      <ListRoom rooms={rooms} />
       {rooms !== null ? (
         <RoomDetail
           selectedRoom={rooms.find((room) => room.id === selectedRoomId)}
