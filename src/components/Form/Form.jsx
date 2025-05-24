@@ -1,4 +1,8 @@
+import { useState } from 'react';
+
 export const Form = () => {
+  const [dateFrom, setDateFrom] = useState();
+
   return (
     <form>
       <div className="form-fields">
