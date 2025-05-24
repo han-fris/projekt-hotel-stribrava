@@ -1,20 +1,60 @@
 import { useState } from 'react';
 
-export const Form = ({ selectedRoom }) => {
-  const [dateFrom, setDateFrom] = useState();
+export const Form = ({ selectedRoomId }) => {
+  const [dateFrom, setDateFrom] = useState('');
+  const [dateTill, setDateTill] = useState('');
+  const [people, setPeople] = useState(1);
+  const [food, setFood] = useState('');
+  const [animal, setAnimal] = useState(false);
+  const [kids, setKids] = useState(false);
+  const [disability, setDisability] = useState(false);
+  const [email, setEmail] = useState('');
+  const [tel, setTel] = useState('');
+
+  const handleSubmit = (event) => {
+    event.preventDefault();
+    fetch('http://localhost:4000/api/orders', {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify({
+        roomId: selectedRoomId,
+        dateFrom,
+        dateTill,
+        people,
+        food,
+        animal,
+        kids,
+        disability,
+        email,
+        tel,
+      }),
+    });
+  };
 
   return (
-    <form>
+    <form onSubmit={handleSubmit}>
       <div className="form-fields">
         <label htmlFor="date-from" className="field-label">
           Od:
         </label>
-        <input id="date-from" className="field-input" type="date" />
+        <input
+          id="date-from"
+          className="field-input"
+          type="date"
+          onChange={(e) => setDateFrom(e.target.value)}
+        />
 
         <label htmlFor="date-till" className="field-label">
           Do:
         </label>
-        <input id="date-till" className="field-input" type="date" />
+        <input
+          id="date-till"
+          className="field-input"
+          type="date"
+          onChange={(e) => setDateTill(e.target.value)}
+        />
 
         <label htmlFor="people" className="field-label">
           Počet osob:
@@ -25,12 +65,17 @@ export const Form = ({ selectedRoom }) => {
           max="4"
           id="people"
           className="field-input"
+          onChange={(e) => setPeople(e.target.value)}
         />
 
         <label htmlFor="food" className="field-label">
           Stravování:
         </label>
-        <select id="food" className="field-input">
+        <select
+          id="food"
+          className="field-input"
+          onChange={(e) => setFood(e.target.value)}
+        >
           <option>Žádné</option>
           <option>Snídaně</option>
           <option>Polopenze</option>
@@ -40,27 +85,52 @@ export const Form = ({ selectedRoom }) => {
         <label htmlFor="animal" className="field-label">
           Domácí mazlíček:
         </label>
-        <input id="animal" className="field-input" type="checkbox" />
+        <input
+          id="animal"
+          className="field-input"
+          type="checkbox"
+          onChange={(e) => setAnimal(e.target.value)}
+        />
 
         <label htmlFor="kids" className="field-label">
           Přistýlka pro dítě:
         </label>
-        <input id="kids" className="field-input" type="checkbox" />
+        <input
+          id="kids"
+          className="field-input"
+          type="checkbox"
+          onChange={(e) => setKids(e.target.value)}
+        />
 
         <label htmlFor="disability" className="field-label">
           Bezbariérový přístup:
         </label>
-        <input id="disability" className="field-input" type="checkbox" />
+        <input
+          id="disability"
+          className="field-input"
+          type="checkbox"
+          onChange={(e) => setDisability(e.target.value)}
+        />
 
         <label htmlFor="email" className="field-label">
-          Email:
+          E-mail:
         </label>
-        <input id="email" className="field-input" type="email" />
+        <input
+          id="email"
+          className="field-input"
+          type="email"
+          onChange={(e) => setEmail(e.target.value)}
+        />
 
         <label htmlFor="tel" className="field-label">
           Telefon:
         </label>
-        <input id="tel" className="field-input" type="tel" />
+        <input
+          id="tel"
+          className="field-input"
+          type="tel"
+          onChange={(e) => setTel(e.target.value)}
+        />
       </div>
       <button className="wide">Submit</button>
     </form>

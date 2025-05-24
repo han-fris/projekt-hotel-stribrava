@@ -1,0 +1,15 @@
+[
+  {
+    "id": 0,
+    "roomId": 1,
+    "dateFrom": "2025-06-25",
+    "dateTill": "2025-09-03",
+    "people": "1",
+    "food": "Polopenze",
+    "animal": false,
+    "kids": false,
+    "disability": false,
+    "email": "sregxer@email.cz",
+    "tel": "57864"
+  }
+]

@@ -26,6 +26,7 @@ export const HomePage = () => {
       <ListRoom onSelectRoom={setSelectedRoomId} rooms={rooms} />
       {rooms !== null ? (
         <RoomDetail
+          selectedRoomId={selectedRoomId}
           selectedRoom={rooms.find((room) => room.id === selectedRoomId)}
         />
       ) : (
