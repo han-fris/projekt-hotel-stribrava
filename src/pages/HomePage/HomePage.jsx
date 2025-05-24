@@ -4,5 +4,12 @@ import { RoomDetail } from '../RoomDetail/RoomDetail';
 import { Footer } from '../Footer/Footer';
 
 export const HomePage = () => {
-  return <></>;
+  return (
+    <>
+      <Header />
+      <ListRoom />
+      <RoomDetail />
+      <Footer />
+    </>
+  );
 };
